@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import express from 'express';
 import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import candidateRoutes from './routes/candidateRoutes';
 
 dotenv.config();
@@ -12,6 +13,7 @@ export default prisma;
 export const app = express();
 const port = 3010;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
