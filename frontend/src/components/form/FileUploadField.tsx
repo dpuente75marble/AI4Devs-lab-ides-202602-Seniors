@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import { formInputStyle } from "../../styles/formStyles";
 
 interface FileUploadFieldProps {
   id: string;
@@ -25,11 +26,7 @@ export function FileUploadField({
         name={name}
         type="file"
         className="form-control form-control-lg"
-        style={{
-          backgroundColor: "#ffffff",
-          border: "1px solid #e0dbd4",
-          borderRadius: "0.75rem",
-        }}
+        style={formInputStyle}
         accept={accept}
         onChange={onChange}
       />

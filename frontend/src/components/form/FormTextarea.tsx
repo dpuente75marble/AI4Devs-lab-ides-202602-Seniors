@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import { formInputStyle } from "../../styles/formStyles";
 
 interface FormTextareaProps {
   id: string;
@@ -30,11 +31,7 @@ export function FormTextarea({
         id={id}
         name={name}
         className="form-control form-control-lg"
-        style={{
-          backgroundColor: "#ffffff",
-          border: "1px solid #e0dbd4",
-          borderRadius: "0.75rem",
-        }}
+        style={formInputStyle}
         value={value}
         onChange={onChange}
         rows={rows}
