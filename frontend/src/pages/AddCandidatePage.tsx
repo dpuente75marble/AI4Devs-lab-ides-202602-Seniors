@@ -125,36 +125,40 @@ function AddCandidatePage() {
                 database organized and accessible for your team.
               </p>
 
-              {/* Contact Details */}
+              {/* ATS Information Points */}
               <div className="d-flex align-items-center mb-3">
-                <i
-                  className="bi bi-telephone me-3"
+                <span
+                  className="me-3"
                   style={{ fontSize: "1.25rem", color: "#d97706" }}
                 >
-                  📞
-                </i>
-                <span style={{ color: "#4b5563" }}>+1(555) 123-4567</span>
+                  📊
+                </span>
+                <span style={{ color: "#4b5563" }}>
+                  Centralize candidate information
+                </span>
               </div>
 
               <div className="d-flex align-items-center mb-3">
-                <i
-                  className="bi bi-geo-alt me-3"
+                <span
+                  className="me-3"
                   style={{ fontSize: "1.25rem", color: "#d97706" }}
                 >
-                  📍
-                </i>
-                <span style={{ color: "#4b5563" }}>San Francisco, CA</span>
+                  📈
+                </span>
+                <span style={{ color: "#4b5563" }}>
+                  Track hiring progress efficiently
+                </span>
               </div>
 
               <div className="d-flex align-items-center">
-                <i
-                  className="bi bi-envelope me-3"
+                <span
+                  className="me-3"
                   style={{ fontSize: "1.25rem", color: "#d97706" }}
                 >
-                  📧
-                </i>
+                  📋
+                </span>
                 <span style={{ color: "#4b5563" }}>
-                  hello@digitalolagency.com
+                  Keep recruitment data organized
                 </span>
               </div>
             </div>
