@@ -2,6 +2,9 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Candidate } from "../types/Candidate";
 import { createCandidate } from "../services/candidateService";
+import { FormInput } from "../components/form/FormInput";
+import { FormTextarea } from "../components/form/FormTextarea";
+import { FileUploadField } from "../components/form/FileUploadField";
 
 const initialForm: Candidate = {
   firstName: "",
@@ -172,172 +175,86 @@ function AddCandidatePage() {
                 </h2>
 
                 <form onSubmit={handleSubmit}>
-                  {/* First Name */}
-                  <div className="mb-4">
-                    <label htmlFor="firstName" className="form-label fw-600">
-                      First Name *
-                    </label>
-                    <input
-                      id="firstName"
-                      name="firstName"
-                      type="text"
-                      className="form-control form-control-lg"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        border: "1px solid #e0dbd4",
-                        borderRadius: "0.75rem",
-                      }}
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      placeholder="Enter your first name"
-                    />
-                  </div>
+                  <FormInput
+                    id="firstName"
+                    name="firstName"
+                    label="First Name"
+                    type="text"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="Enter your first name"
+                    required
+                  />
 
-                  {/* Last Name */}
-                  <div className="mb-4">
-                    <label htmlFor="lastName" className="form-label fw-600">
-                      Last Name *
-                    </label>
-                    <input
-                      id="lastName"
-                      name="lastName"
-                      type="text"
-                      className="form-control form-control-lg"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        border: "1px solid #e0dbd4",
-                        borderRadius: "0.75rem",
-                      }}
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      placeholder="Enter your last name"
-                    />
-                  </div>
+                  <FormInput
+                    id="lastName"
+                    name="lastName"
+                    label="Last Name"
+                    type="text"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder="Enter your last name"
+                    required
+                  />
 
-                  {/* Email */}
-                  <div className="mb-4">
-                    <label htmlFor="email" className="form-label fw-600">
-                      Email *
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      className="form-control form-control-lg"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        border: "1px solid #e0dbd4",
-                        borderRadius: "0.75rem",
-                      }}
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
+                  <FormInput
+                    id="email"
+                    name="email"
+                    label="Email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your.email@example.com"
+                    required
+                  />
 
-                  {/* Phone */}
-                  <div className="mb-4">
-                    <label htmlFor="phone" className="form-label fw-600">
-                      Phone
-                    </label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="text"
-                      className="form-control form-control-lg"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        border: "1px solid #e0dbd4",
-                        borderRadius: "0.75rem",
-                      }}
-                      value={formData.phone || ""}
-                      onChange={handleChange}
-                      placeholder="Your phone number"
-                    />
-                  </div>
+                  <FormInput
+                    id="phone"
+                    name="phone"
+                    label="Phone"
+                    type="text"
+                    value={formData.phone || ""}
+                    onChange={handleChange}
+                    placeholder="Your phone number"
+                  />
 
-                  {/* Address */}
-                  <div className="mb-4">
-                    <label htmlFor="address" className="form-label fw-600">
-                      Address
-                    </label>
-                    <input
-                      id="address"
-                      name="address"
-                      type="text"
-                      className="form-control form-control-lg"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        border: "1px solid #e0dbd4",
-                        borderRadius: "0.75rem",
-                      }}
-                      value={formData.address || ""}
-                      onChange={handleChange}
-                      placeholder="Your address"
-                    />
-                  </div>
+                  <FormInput
+                    id="address"
+                    name="address"
+                    label="Address"
+                    type="text"
+                    value={formData.address || ""}
+                    onChange={handleChange}
+                    placeholder="Your address"
+                  />
 
-                  {/* Education */}
-                  <div className="mb-4">
-                    <label htmlFor="education" className="form-label fw-600">
-                      Education
-                    </label>
-                    <textarea
-                      id="education"
-                      name="education"
-                      className="form-control form-control-lg"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        border: "1px solid #e0dbd4",
-                        borderRadius: "0.75rem",
-                      }}
-                      value={formData.education || ""}
-                      onChange={handleChange}
-                      rows={3}
-                      placeholder="Your educational background"
-                    />
-                  </div>
+                  <FormTextarea
+                    id="education"
+                    name="education"
+                    label="Education"
+                    value={formData.education || ""}
+                    onChange={handleChange}
+                    rows={3}
+                    placeholder="Your educational background"
+                  />
 
-                  {/* Experience */}
-                  <div className="mb-4">
-                    <label htmlFor="experience" className="form-label fw-600">
-                      Experience
-                    </label>
-                    <textarea
-                      id="experience"
-                      name="experience"
-                      className="form-control form-control-lg"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        border: "1px solid #e0dbd4",
-                        borderRadius: "0.75rem",
-                      }}
-                      value={formData.experience || ""}
-                      onChange={handleChange}
-                      rows={4}
-                      placeholder="Your professional experience"
-                    />
-                  </div>
+                  <FormTextarea
+                    id="experience"
+                    name="experience"
+                    label="Experience"
+                    value={formData.experience || ""}
+                    onChange={handleChange}
+                    rows={4}
+                    placeholder="Your professional experience"
+                  />
 
-                  {/* CV Upload */}
-                  <div className="mb-4">
-                    <label htmlFor="cv" className="form-label fw-600">
-                      CV (PDF or DOCX)
-                    </label>
-                    <input
-                      id="cv"
-                      name="cv"
-                      type="file"
-                      className="form-control form-control-lg"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        border: "1px solid #e0dbd4",
-                        borderRadius: "0.75rem",
-                      }}
-                      accept=".pdf,.docx"
-                      onChange={handleFileChange}
-                    />
-                  </div>
+                  <FileUploadField
+                    id="cv"
+                    name="cv"
+                    label="CV (PDF or DOCX)"
+                    accept=".pdf,.docx"
+                    onChange={handleFileChange}
+                  />
 
                   {/* Alert Messages */}
                   {message && (
